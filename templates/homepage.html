@@ -1,0 +1,36 @@
+
+
+{% extends 'base.html' %}
+
+{% block title %}
+
+<h1> UberMelon’s Most Loved Melons</h1>
+
+{% endblock %}
+
+
+{% block body %}
+
+    <h1>Hi There!</h1>
+    <div>
+
+        <form method="POST" action="/get-name">
+        What is your name? 
+        <input type="text" name="nm" />
+        <input type="submit" value="submit"/>
+        </form>
+        </div>
+
+
+    <div>
+        <br>
+
+        <img src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/high-angle-view-of-watermelon-slices-on-table-royalty-free-image-769783321-1564779194.jpg" class="img-responsive">
+
+        </br>
+  
+    </div>
+
+
+{% endblock %}
+

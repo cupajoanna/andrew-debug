@@ -1,0 +1,68 @@
+
+
+
+{% extends 'base.html' %}
+
+{% block body %}
+
+
+<!-- {% if session['user'] %}
+ -->
+
+  <h3>Welcome, {{user}} !</h3>
+
+
+    <h1>Top Selling Melons</h1>
+
+    <div id="melon-list" class="row">
+    {% for melon in melon_list %}
+
+          <div><h3>
+<!--             <a href="/top-melons/{{melon['name']}}">  -->
+            {{user}} this is a {{melon['name']}}
+            <!-- </a> -->
+              
+            </h3>
+
+          <!-- <a href="/top-melons/{{melon['img']}}"> -->
+          <img src="{{melon['img']}}" class="img-circle">
+<!--           </a> -->
+
+          <div class="loves">Number of Loves: {{ melon['num_loves']}}</div>
+
+         <!--  <a href="/top-melons/{{melon['num_loves']}}">Details</a> -->
+          </div>
+
+          </div>
+      {% endfor %}
+
+
+    <h1>Which one is your favourite?</h1>
+
+
+        <form action="/love-melon" method="POST">
+
+        <h3> Choose your favourite melon </h3>
+
+        <select name="melon">
+
+        {% for melon in melon_list %}
+          <option name= '{{melon}}' value='{{melon}}'>
+            {{ melon['name']}}
+          </option>
+        {% endfor %}
+      </select>
+         <input type = "submit">
+        </form>
+
+
+  {% else %}
+
+  <title action="/"> Please give us your name </title>
+
+  <div><h3><a href="/">Please give us your name!</a></h3></div>
+
+
+  {% endif %}
+
+{% endblock %}
